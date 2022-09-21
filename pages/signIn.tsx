@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
 import { useFormik } from "formik";

@@ -32,7 +32,7 @@ export default async function handler(
         });
         updatedRecord = [{ ...record[0], name: exerciseName!.name }];
       }
-      await prisma.$disconnect;
+      prisma.$disconnect;
       return res.status(200).json(updatedRecord);
     default:
       break;

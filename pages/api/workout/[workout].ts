@@ -17,7 +17,7 @@ export default async function handler(
           exercise: true,
         },
       });
-      await prisma.$disconnect;
+      prisma.$disconnect;
       const exercises = workout.map((workout) => workout.exercise);
       return res.status(200).json([...exercises]);
     default:

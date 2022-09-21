@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
-
 import { prisma } from "../db";
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -20,7 +20,7 @@ export default async function handler(
           },
         },
       });
-      await prisma.$disconnect;
+      prisma.$disconnect;
       return res.status(200).json(exercise);
     default:
       break;

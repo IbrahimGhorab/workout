@@ -80,7 +80,7 @@ export default async function handler(
           weight: userLogs[i]._max.weight,
         };
       }
-      await prisma.$disconnect;
+      prisma.$disconnect;
       return res.status(200).json(records);
     default:
       break;

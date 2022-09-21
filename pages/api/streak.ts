@@ -36,7 +36,7 @@ export default async function handler(
           },
         });
       }
-      await prisma.$disconnect;
+      prisma.$disconnect;
       return res.status(200).json(findUser);
     default:
       break;

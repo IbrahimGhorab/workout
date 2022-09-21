@@ -9,7 +9,7 @@ export default async function handler(
   switch (req.method) {
     case "GET":
       const workouts = await prisma.workout.findMany();
-      await prisma.$disconnect;
+      prisma.$disconnect;
       return res.status(200).json(workouts);
     default:
       break;
